@@ -1,0 +1,142 @@
+/* ========== Global ========== */
+body {
+  overflow-x: hidden;
+}
+
+/* ========== Small Devices (Mobile, <768px) ========== */
+@media (max-width: 767px) {
+  /* Header / Navbar */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  /* Features / Stats */
+  .features {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .stat-card,
+  .feature-box {
+    padding: 20px;
+  }
+
+  /* Courses */
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Testimonial */
+  .testimonial-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-text {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-column {
+    text-align: left;
+  }
+}
+
+/* ========== Medium Devices (Tablet, 768px – 1023px) ========== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content, .hero-image {
+    max-width: 100%;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-text {
+    margin-top: 16px;
+  }
+
+  .footer-right {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .footer-column {
+    flex: 1 1 45%;
+  }
+}
+
+/* ========== Large Devices (Laptop/Desktop, ≥1024px) ========== */
+@media (min-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-right {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .testimonial-content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
