@@ -1,142 +1,300 @@
-/* ========== Global ========== */
-body {
-  overflow-x: hidden;
-}
-
-/* ========== Small Devices (Mobile, <768px) ========== */
-@media (max-width: 767px) {
-  /* Header / Navbar */
+/* ========= Mobile Devices (max-width: 768px) ========= */
+@media (max-width: 768px) {
+  /* ===== Header/Navbar ===== */
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    padding: 16px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .navbar {
+    display: none;
     flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f0f4ff;
+    padding: 20px;
+    gap: 16px;
+    border-top: 1px solid #ddd;
+    animation: slideDown 0.3s ease;
+    z-index: 99;
   }
 
-  /* Hero */
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 8px;
+  }
+
+  .close-menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .close-menu i {
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .close-menu i:hover {
+    background: #ddd;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* ===== Hero Section ===== */
   .hero {
-    flex-direction: column;
     padding: 40px 20px;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .hero-content {
     max-width: 100%;
+    flex: 1 1 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .subtitle,
+  .description {
+    font-size: 14px;
+  }
+
+  .hero-cta {
+    padding: 10px 18px;
+    font-size: 14px;
   }
 
   .hero-image {
-    margin-top: 20px;
-    max-width: 100%;
+    flex: 1 1 100%;
+    text-align: center;
   }
 
-  /* Features / Stats */
-  .features {
-    grid-template-columns: 1fr;
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ===== Stats Section ===== */
+  .stats-section {
+    padding: 40px 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 20px 16px;
+  }
+
+  .stat-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stat-card h3 {
+    font-size: 16px;
+  }
+
+  .stat-card p {
+    font-size: 13px;
+  }
+
+  /* ===== Courses Section ===== */
+  .courses-section {
     padding: 40px 20px;
   }
 
-  .stat-card,
-  .feature-box {
-    padding: 20px;
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 24px;
   }
 
-  /* Courses */
   .courses-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .course-image {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .course-title {
+    font-size: 16px;
+  }
+
+  .course-designation,
+  .buy-course,
+  .course-meta {
+    font-size: 13px;
+  }
+
+  .buy-course {
+    padding: 6px 14px;
   }
 
   .course-meta {
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 6px;
   }
 
-  /* Testimonial */
+  /* ===== Testimonial Section ===== */
+  .testimonial-section {
+    padding: 40px 20px;
+  }
+
+  .testimonial-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
   .testimonial-content {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
     text-align: center;
   }
 
   .testimonial-text {
-    text-align: center;
-    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
-  /* Footer */
-  .footer-top {
-    flex-direction: column;
+  .testimonial-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* ========= Tablets and Small Laptops (769px to 1024px) ========= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* ===== Header/Navbar ===== */
+  .header {
+    padding: 16px 60px;
+  }
+
+  .navbar {
     gap: 30px;
   }
 
-  .footer-right {
-    flex-direction: column;
+  /* ===== Hero Section ===== */
+  .hero {
+    padding: 50px 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-content {
+    max-width: 60%;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  /* ===== Stats Section ===== */
+  .stats-section {
+    padding: 50px 60px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-card img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .stat-card h3 {
+    font-size: 17px;
+  }
+
+  /* ===== Courses Section ===== */
+  .courses-section {
+    padding: 50px 60px;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
 
-  .footer-column {
-    text-align: left;
-  }
-}
-
-/* ========== Medium Devices (Tablet, 768px – 1023px) ========== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
+  .course-image {
+    width: 100%;
+    height: auto;
+    padding: 0;
   }
 
-  .hero-content, .hero-image {
-    max-width: 100%;
+  .course-title {
+    font-size: 17px;
   }
 
-  .features {
-    grid-template-columns: repeat(2, 1fr);
+  .buy-course {
+    font-size: 13.5px;
+    padding: 6px 16px;
   }
 
-  .courses-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .course-meta {
+    gap: 10px;
+  }
+
+  /* ===== Testimonial Section ===== */
+  .testimonial-section {
+    padding: 50px 60px;
+  }
+
+  .testimonial-title {
+    font-size: 26px;
   }
 
   .testimonial-content {
-    flex-direction: column;
-    text-align: center;
+    gap: 24px;
+    flex-wrap: wrap;
   }
 
   .testimonial-text {
-    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
-  .footer-right {
-    flex-wrap: wrap;
-    gap: 32px;
-  }
-
-  .footer-column {
-    flex: 1 1 45%;
-  }
-}
-
-/* ========== Large Devices (Laptop/Desktop, ≥1024px) ========== */
-@media (min-width: 1024px) {
-  .features {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .courses-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer-right {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .testimonial-content {
-    flex-direction: row;
-    text-align: left;
+  .testimonial-image {
+    width: 110px;
+    height: 110px;
   }
 }
