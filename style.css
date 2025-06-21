@@ -16,14 +16,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 400;
-  align-self: center;
   background-color: #f0f4ff;
+  position: relative;
+  z-index: 100;
 }
 
 /* Logo */
 .logo {
-    width: 10%;
+  width: auto;
+}
+
+/* Hamburger - hidden by default (visible in mobile via media.css) */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
 }
 
 /* Navbar */
@@ -44,6 +52,21 @@ body {
   color: #21B573;
 }
 
+/* CTA Button */
+.cta {
+  background-color: #21B573;
+  color: white !important;
+  padding: 10px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #ffd000;
+}
+.close-menu {
+  display: none;
+}
 /* CTA Button */
 .cta {
   background-color: #21B573;
@@ -371,5 +394,3 @@ body {
   font-size: 14px;
   color: #888;
 }
-
-
